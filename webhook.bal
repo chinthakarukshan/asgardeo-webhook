@@ -1,4 +1,5 @@
 import ballerinax/trigger.asgardeo;
+import ballerina/log;
 import ballerina/http;
 
 configurable asgardeo:ListenerConfig config = ?;
@@ -10,12 +11,15 @@ service asgardeo:RegistrationService on webhookListener {
   
     remote function onAddUser(asgardeo:AddUserEvent event ) returns error? {
       //Not Implemented
+      log:printInfo(event.toJsonString());
     }
     remote function onConfirmSelfSignup(asgardeo:GenericEvent event ) returns error? {
       //Not Implemented
+      log:printInfo(event.toJsonString());
     }
     remote function onAcceptUserInvite(asgardeo:GenericEvent event ) returns error? {
       //Not Implemented
+      log:printInfo(event.toJsonString());
     }
 }
 
